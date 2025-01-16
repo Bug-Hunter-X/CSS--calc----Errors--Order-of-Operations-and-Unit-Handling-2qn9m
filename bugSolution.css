@@ -1,0 +1,15 @@
+The solution involves proper use of parentheses to control the order of operations and ensure units are handled correctly within the `calc()` function.  Spaces should be included around the operators (+, -, *, /) inside the `calc()` function. 
+
+Here is the corrected code:
+
+```css
+.element {
+  width: calc(50% + 100px); /* Correct: Parentheses ensure addition happens after percentage calculation */
+}
+
+.another-element {
+  height: calc(100vh - 50px); /* Correct: subtraction is correctly processed */
+}
+```
+
+This ensures that calculations are performed as intended and prevents unexpected results. Always carefully consider unit types (px, %, em, etc.) and their interaction within the calculation.
