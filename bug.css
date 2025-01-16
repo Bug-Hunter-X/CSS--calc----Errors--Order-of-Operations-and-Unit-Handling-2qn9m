@@ -1,0 +1,16 @@
+The CSS property `calc()` is used to perform calculations within CSS. However, there are some unexpected behaviors related to the order of operations and unit handling that can lead to errors. For instance, if you try to perform a calculation involving percentages and other units without properly parenthesizing expressions, the results may not be as expected. Consider the following example:
+
+```css
+.element {
+  width: 50% + 100px;
+}
+```
+
+In this case, `50%` is calculated based on the parent element's width *before* adding `100px`. The correct way to achieve the desired behavior, where `100px` is added to half the parent's width, is to use parentheses:
+
+```css
+.element {
+  width: calc(50% + 100px);
+}
+```
+Another common mistake is forgetting to add spaces around the operators within `calc()`. Incorrect spacing can lead to unexpected behavior, making it hard to debug. Always include spaces to ensure the calculation is interpreted correctly.
